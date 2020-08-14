@@ -1,0 +1,9 @@
+language: node_js
+node_js: "-10.15.0"
+cache: npm
+install: "-npm ci"
+script: "-npm test -npm run build"
+deploy:
+  provider: heroku
+  api_key:
+    secure: yPOr5jnzhhEOqt2YSYJjeN3Mi8zibm2JcFdbx1kwCUAWA5Zm6Q3e4wV3yK+DO23UXFhQ3h4dYeYnTk73woE3CjyilAe+frVv5YAMkQijrJAQgsIQZIAZgpTy5diXf3l9t6E0LgrS78qqLekD3QJ7PRHpocDhhQ/vy470CjMwlD/+pjr7lNMkSLoSllzjgmlQUZ8ENgW1DXfp65CDTndi9BXdgMCgx3XvsI0RnSeQUONlGWAzfI2bY+fVct3TBAECWe1czE4RbYofMSqLiQOD9N6BT4BZCzqtQaHBml8hTlmPhNZnDFSJRLkJ59lXD645EF8hQLrcrQc7zA6PzR0wFKAtFHGUBp48PUwBOE5lm6xa1a/N2WmlDlqMAeWxypVYh+b6lGf7azx9BItVikDgsWAc8qvSQxAGiCVV5yVYvUGSE/nZY1OyDA5oHWumPbs1SuI0h8RjHQiQmyukMk1xX8OH468kL1QaOJ6vE8kQXUS67JX97dsF//Ey5FVo7yN9ruDqOgTdtq4k4nGNRL/gy6zqqXhkFLDw+h+guKLO4OSbviWX5Ur4IJZ/y1KnkizteDvhDRP1kUtcwKUkDCrJNStgEAQaftGQZ5BUbgWMlm0b5n+RUv6Y4fEvU6t9VygO/AxxhuU1awqF+CwlgUONXxMVEcdbRoDRpImjY7cNbvY=
