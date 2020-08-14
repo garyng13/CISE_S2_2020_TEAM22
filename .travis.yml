@@ -3,11 +3,4 @@ node_js: 10.21.0
 install: npm install
 script:
 - npm test
-deploy:
-  provider: heroku
-  api_key:
-    secure: SLCMgiEPcnk1BJ1Ucf8fnx6iwBGo8tGp4seAkxSkL+PppAIhiMzwVXg/iI4Qn1djFp187jHErIaJzaCLBkdSLjDoCy8iNUvaNziZQT5WPyqfw+jVXNfW1zRyYtn4Vb/yAUeNM9HX2P+NPbuOhyUJ5DBLsirGbgG2XIUoIZjafEQ70LvTYaMjNwlvIIM3R8v1BDtUHYzao3cQIvXBpRhwCf9qvumLJbZVybShXM/ZcmgoDNFyRSgw6d3YRg30S6seuQqK9233ZK0Q96COjHcmJ/hL2LEjrGCJqfQ5ImH/5yz332Y7LK0EQESZvaIBQGK5FZ6pYgD2hs0N0GBqet4Nby1zGh+H7GWeH1Qe78M7KU3u2fE1Cu+NUSx3d0wQjXibLj1S5Tm7QF+3kXU8QwvHFF5VUET1ZQZJFPt23Hzyp8d0FeVUqcHHnLy9ZPw5cqF8k1Gr0BDek1BMcod9aUMe4q+kQK7pgN0l9wK+g6VwLDj8ZHg2fcl+GTIQscox2u53FTcGwlUhgDr570D0s/AdqYrgxk87P+C1dWrFuut9JAPvbqmdMlzUF4eSeYpD+ha5h9z96jcwbR0YOU4jFXCacPSiFfm8ZMpKpcRKd5Y/17CKm7wg8i6WToArf3+p1wbL7OmFFRgHWs/Tc14Do8Xtrq/6We8iG4fp/e25gabEGBI=
-  app: myapp
-  on:
-    repo: garyng13/github_heroku
-  skip_cleanup: 'true'
+
