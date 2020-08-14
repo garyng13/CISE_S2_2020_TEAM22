@@ -8,5 +8,10 @@ app.listen(PORT, ()=>{
 });
 
 app.get('/', (req, res) =>{
+<<<<<<< HEAD
 	res.send({ok: false});
 })
+=======
+	res.send({ok: true});
+})
+>>>>>>> 383f28846dc81b879cf091541d5a37e8a5a0b0f1
