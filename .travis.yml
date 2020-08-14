@@ -9,5 +9,5 @@ deploy:
     secure: bM2I8QQPnXWn5H7NcSUjoKKnGFSuWwGFtHS4Y9gf+sba0AB9IyOz/puX66GDvSjbn4FFZ7buapK7a4pkaY12eG+bzsjhBbkXPmUkX0yGCOdPeTN2H66teVz/gx5lxDkg5yx13R04s/LWeyLVyAZItUhP+63hHjCjhGwFKkKZqsi+tRIgLmZRR6tB1V7uGkz8VeKSiQPIOrOoGAsKibjrb4zPm+FddaYn/sAFolDON3EpDyCvXRWoCL5G+9bHlSvRXK2alLokd3HU3Y7DHRGCrGEAyy+p2wfYLdjftkO7sOWE1s0hx7XAHE9+UCl5lGDFiMVPmSWFAUdVv9fJyR3yLnWUQkxR8EO9zEe3O7y8CZwQcdpH16FZm2DB6CRokaRvNVBRxElKZreE9C7twMxhYasvh6k3025PUyZpwhK/Srg/ZR8qIT4j+FkWUeYBKBXQEuH0/SbjQdq7kIAGPG9AgRJP7wbcU59fjXyLsGQPnN6NAHMFIL9BX2PUxPsNsnCEct1QYLYa+UPIYTUz3V4aUTXNnM/l5n/ZjAoT2M8EFzlRdG9QJSJK2WC4Wg3mrK60wrU7DwdpegsS02B8UYBTuz/aIZmidx4av5ftYa4DAbDRMwPyePRVz5xlKRc026e6WsT4wRhzUG/r5tMfysyI4BUw0pjTYiHuyFNsbo4dXyA=
   app: myapp
   on:
-    repo: https://evening-wave-74187.herokuapp.com/
+    repo: https://arcane-waters-98913.herokuapp.com/
   skip_cleanup: 'true'
