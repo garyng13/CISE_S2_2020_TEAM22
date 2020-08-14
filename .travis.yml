@@ -4,6 +4,6 @@ install: npm install
 script:
 - npm test
 deploy:
-  provider: heroku:git
-  username: <username>
-  password: <encrypted password>
+  provider: heroku
+  username: nghotak@gmail.com	
+  password: GaryAut2020
