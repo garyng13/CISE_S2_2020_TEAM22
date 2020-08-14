@@ -6,4 +6,8 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: 19706f45-c55a-4506-8d14-6a8568e6ce86
+    secure: YolIevXzEBhc/4BXy4LqDdoFH8yJkc14qxYn5RzCamxXCi+KhyR7QECm5rVQKCAnjwaOOKLsd60Ij8KRg0pQLQRgatlfGXR02+hqBBAJ72JUlgLlMmbvgxAIWXk7TBlTriqS4InkAACfJJ2ayzwBIHRa8jHf8FypNWTAl2QQFaZZ2DheVdwF7PsdkuRxZcANUdP1weTMUzhC7uKOSnaLgjnTnHEaxhuxgx75jeJB1s15s53CMUmYtkptRnpl6Pj1/oR/ypT6a1++4azinvMMBmpugjVT7A9bZtJXUckHn42I2TThpLoDRX0QgkkDx5WgbTwlBIUZc0amACe+ZK+FY338nyE5f384/VGgWWUyaDWEicROwV7dpcIaya1fwmQWk8gB/R3/Q37uD+teP3ZWaDGH+8HCdIGxM0DXXHRSjOlNhgRBTRvfO66a+/JplGs06ypGIO3TE+vp2JefMyRgWkZCjIuOBbtU0h94Zr68u/5SPPvm2M1yDpEHGeWpLG6fRDCjDOVdIMxnOy1PzzjxS0L/XAqjZlar/QfaicImNyKcn2+1HTtY0JpOmfT/ED3BRAOgTFHpa2FLhLSJU7xEyEcrVwVx0ASn0mykZYlEijJpZYeJ2ancWX650g9Lo5M7BVocubPPpuwYW15UghhV0v362ZZmnq70vbDZz3c6O2A=
+  app: github_heroku
+  on:
+    repo: garyng13/github_heroku
+  skip_cleanup: 'true'
