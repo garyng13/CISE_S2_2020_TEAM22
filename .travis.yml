@@ -5,5 +5,7 @@ script:
 - npm test
 deploy:
   provider: heroku
-  username: nghotak@gmail.com	
+  username: nghotak@gmail.com
   password: GaryAut2020
+  api_key:
+    secure: lg2PnkiGmLiE6/6vqqPDiGfA9F6KAO3v8sboSVBow6GMdlITAkRrUf9G4VLVcTis0A5bTvbO+gJjeNFLioEaxKTgRiylEn7i/ekvi9/0uYc8YC5/oJ29B8VnpFkPeMSK0jq4Y4TXm1hp4jUTetEz8xeolG6UwiM45kZzzwJynH+dAo8fbwi5scGQWwkna2KVwVojh7cQLwSVrWBIxHOvJUVh8hGAgnMYvRbbJx/EonPxlZ9hmzHzU8zJrd4kbbtGVmyeE8WKGuGhoWHZjrqQDkVkfibMPOc1fxPq9nEBo5+2wnbsu2G5nymJgNxXjDPvynHZrobnTYWyB9xyPjfdsenfhXy1msgQbXf5WSDS59+yg3/QTQSff/NberrwC600d15+xvgWxt8YPIrNfzADDucorLukaLqZ+0f0Y3Xj5m9azC/SWdU7lI0C9rAnlfuzz9tVnvL0VeAwIWa2BfzmFEm8Wc6/T48ZsTtjgQXN9OMDSZ3w1ykO/ud5CY3+JC7PK3PA5INoP2qupfabAtleNMbev6wNHLVqwwP6FDa83Ha6PYGHAYv7MZp8jsddREvVsIe5sF4EcIeVovjwhJmSmGMX8w5ljfowxTu+adGQwHwUkKSTzfXgn8YY6wsgbZS2o5ejbC+hZg9NtrUaDbLeF/mD+j6WkWn3JSozccq+bQQ=
