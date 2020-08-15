@@ -8,5 +8,9 @@ app.listen(PORT, ()=>{
 });
 
 app.get('/', (req, res) =>{
+<<<<<<< HEAD
 	res.send({ok: false, text: "honda"});
+=======
+	res.send({ok: false, text: "benz"});
+>>>>>>> c49a8ba1d1ca9c6085e3d315bc2aa24a055a479c
 })
