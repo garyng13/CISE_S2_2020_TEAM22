@@ -8,6 +8,6 @@ app.listen(PORT, ()=>{
 });
 
 app.get('/', (req, res) =>{
-	res.send({ok: false, text: "change yml"});
+	res.send({ok: false, text: "yml config changed"});
 
 })
