@@ -1,6 +1,6 @@
 module.exports ={
 	sayGary: function(){
-		return 'gar';
+		return 'garys';
 	},
 	addNumbers: function(a,b){
 		return a+b;
