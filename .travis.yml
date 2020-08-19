@@ -3,11 +3,22 @@ node_js: 10.21.0
 install: npm install
 script:
 - npm test
+
+env:
+  # Github deployment key
+  - secure: "uOLuwT2BiCpees4T1eK0sLb2sWUXLzT/iNesk/kGyKsE/GX8ZJHm24ooXW9KOyMH9RdFwOGbu95lmWfhbVE7meGFEYNWWXJkUoMAMjBmonE20oE2A1a3NMW3k5N8pBm8FYiRNJ7b/KIJC8RxXnybr6yLahW5zDYnR2u7qmFJzJKWUUFqMOdCY4OmnKm3pwUe43EAyyQDosiuM8OYkcTYfHJ7GxmliiarWDpe0qp6XcbiTZRLjUuibfIN6/Oj6MzR0kkm3EqnvSHIiaVj9Jbgc+iKuHYjMAXSulzwfvVP7tgh9VfYC22wsLYfIZDEKSY4YdC1Wu8voE0o2FKs9ApcAE2dOEKEUTXxdSvXuZSHfgETu2VTYu72scxAG0wQsY5PQGzQXzN6xZ8LMQSC6Nm2R0GFQOrRJPdK8m9ayGFj6G2fk2cfX8FN6Hbls3kcBrca3cJ1alhYdz/YR9DnCPAIrRSw4C0awYOqBKin842oXxU76EseaM3c2HPY1JOosF9roQGqZg21HQQ+9TiVMbLfdXkoZnESTSYvvQM1ClRm+pieKvwby11zEnwBfhdGVtWJqx4lSskO9fAVclyvIalDH0vRui867qTu6Yoyjqmnm5RaQB2XSppuVpTQIn0ExsKQUkTjzOM+UEApTBG/QZnIo11hhPKMetxl7aVR/CCq/ms="
+
+
+after_success:
+  - "curl -o /tmp/travis-automerge https://github.com/garyng13/github_heroku.git/travis-automerge/master/travis-automerge"
+  - "chmod a+x /tmp/travis-automerge"
+  - "BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=cdown/srt /tmp/travis-automerge"
+
 deploy:
   provider: heroku
   api_key:
     secure: bM2I8QQPnXWn5H7NcSUjoKKnGFSuWwGFtHS4Y9gf+sba0AB9IyOz/puX66GDvSjbn4FFZ7buapK7a4pkaY12eG+bzsjhBbkXPmUkX0yGCOdPeTN2H66teVz/gx5lxDkg5yx13R04s/LWeyLVyAZItUhP+63hHjCjhGwFKkKZqsi+tRIgLmZRR6tB1V7uGkz8VeKSiQPIOrOoGAsKibjrb4zPm+FddaYn/sAFolDON3EpDyCvXRWoCL5G+9bHlSvRXK2alLokd3HU3Y7DHRGCrGEAyy+p2wfYLdjftkO7sOWE1s0hx7XAHE9+UCl5lGDFiMVPmSWFAUdVv9fJyR3yLnWUQkxR8EO9zEe3O7y8CZwQcdpH16FZm2DB6CRokaRvNVBRxElKZreE9C7twMxhYasvh6k3025PUyZpwhK/Srg/ZR8qIT4j+FkWUeYBKBXQEuH0/SbjQdq7kIAGPG9AgRJP7wbcU59fjXyLsGQPnN6NAHMFIL9BX2PUxPsNsnCEct1QYLYa+UPIYTUz3V4aUTXNnM/l5n/ZjAoT2M8EFzlRdG9QJSJK2WC4Wg3mrK60wrU7DwdpegsS02B8UYBTuz/aIZmidx4av5ftYa4DAbDRMwPyePRVz5xlKRc026e6WsT4wRhzUG/r5tMfysyI4BUw0pjTYiHuyFNsbo4dXyA=
   app: myapp
   on:
-    repo: https://github.com/garyng13/github_heroku.git
+    repo: https://arcane-waters-98913.herokuapp.com/
   skip_cleanup: 'true'
