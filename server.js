@@ -8,6 +8,6 @@ app.listen(PORT, ()=>{
 });
 
 app.get('/', (req, res) =>{
-	res.send({ok: false, text: "hello apple"});
+	res.send({ok: false, text: "Captain America"});
 
 })
