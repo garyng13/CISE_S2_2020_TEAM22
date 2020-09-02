@@ -9,3 +9,11 @@ app.listen(PORT, ()=>{
 app.get('/', (req, res) =>{
 	res.sendfile('public/index.html')
 })
+
+app.get('/', (req, res) =>{
+	res.sendfile('public/mystyle.css')
+})
+
+app.get('/', (req, res) =>{
+	res.sendfile('public/search.html')
+})
