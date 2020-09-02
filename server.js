@@ -8,4 +8,7 @@ app.listen(PORT, ()=>{
 
 app.get('/', (req, res) =>{
 	res.sendfile('public/index.html')
-})
+});
+app.get('/search.html', (req, res) =>{
+	res.sendfile('public/search.html')
+});
