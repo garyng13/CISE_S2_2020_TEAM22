@@ -7,13 +7,13 @@ app.listen(PORT, ()=>{
 });
 
 app.get('/', (req, res) =>{
-	res.sendfile('public/index.html')
-})
+	res.sendfile('public/index.html');
+});
 
 app.get('/', (req, res) =>{
-	res.sendfile('public/mystyle.css')
-})
+	res.sendfile('public/mystyle.css');
+});
 
 app.get('/', (req, res) =>{
-	res.sendfile('public/search.html')
-})
+	res.sendfile('public/search.html');
+});
