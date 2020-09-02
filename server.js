@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-
+const path = require("path");
+const router = express.Router();
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, ()=>{
@@ -8,6 +9,5 @@ app.listen(PORT, ()=>{
 });
 
 app.get('/', (req, res) =>{
-	res.send({ok: false, text: "Captain America"});
-
+	res.sendfile('public/index.html')
 })

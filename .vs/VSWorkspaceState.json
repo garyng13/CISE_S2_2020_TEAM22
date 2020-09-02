@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\test"
   ],
-  "SelectedNode": "\\.travis.yml",
+  "SelectedNode": "\\public\\index.html",
   "PreviewInSolutionExplorer": false
 }
