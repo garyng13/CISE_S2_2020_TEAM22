@@ -12,6 +12,16 @@ router.get('/', async(req, res)=>{
 
 });
 
+router.get('/coffee', async(req, res)=>{
+	try{
+		Seer.createIndex( { author: "text" } )
+		const seer = await Seer.find( { $text: { $search: "java gary shop" } } )
+		res.json(seer);
+	}catch(err){
+		res.send('Error' + err);
+	}
+});
+
 router.get('/:id', async(req, res)=>{
 	try{
 		const seer = await Seer.findById(req.params.id);
@@ -30,6 +40,7 @@ router.post('/', async(req, res)=>{
 	console.log(author);
 	console.log(url);
 	console.log(rating);
+
 	const seer = new Seer({
 		author: author,
 		url: url,
@@ -55,8 +66,4 @@ router.post('/', async(req, res)=>{
 	}
 });
 
-router.post('/quotes', (req, res) => {
-  console.log('Hellooooooooooooooooo!');
-  console.log(req.body);
-})
 module.exports = router;
