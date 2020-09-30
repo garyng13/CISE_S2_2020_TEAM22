@@ -2,7 +2,7 @@ const config = require('../config.js');
 
 const mongoose = require('mongoose');
 
-//second trial to connect to cloud based mongodb
+//url to connect mongodb Atlas
 const url = 'mongodb+srv://dbUser:'+config.KEY+'@cluster0.npid8.mongodb.net/seer?retryWrites=true&w=majority';
 
 //const url = process.env.url;

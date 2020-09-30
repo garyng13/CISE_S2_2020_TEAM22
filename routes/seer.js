@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Seer = require('../models/seer');
 
+// route for get database
 router.get('/', async(req, res)=>{
 	try{
 		const seer = await Seer.find();
@@ -12,16 +13,7 @@ router.get('/', async(req, res)=>{
 
 });
 
-router.get('/coffee', async(req, res)=>{
-	try{
-		Seer.createIndex( { author: "text" } )
-		const seer = await Seer.find( { $text: { $search: "java gary shop" } } )
-		res.json(seer);
-	}catch(err){
-		res.send('Error' + err);
-	}
-});
-
+// route for getting particular id from database
 router.get('/:id', async(req, res)=>{
 	try{
 		const seer = await Seer.findById(req.params.id);
@@ -32,6 +24,7 @@ router.get('/:id', async(req, res)=>{
 
 });
 
+// route for posting 
 router.post('/', async(req, res)=>{
 
 	let author = req.body.author;
@@ -55,6 +48,7 @@ router.post('/', async(req, res)=>{
 	}
 });
 
+// route for update database
 	router.patch('/:id', async(req, res)=>{
 	try{
 		const seer = await Seer.findById(req.params.id);
