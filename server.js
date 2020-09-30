@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser')
 
 //connect to mongoDB Atlas 
-connectDB();
+//connectDB();
 
 //use Json parser
 app.use(express.json());
