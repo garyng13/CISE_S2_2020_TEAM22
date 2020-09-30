@@ -31,3 +31,7 @@ app.get('/', (req, res) =>{
 app.get('/search.html', (req, res) =>{
 	res.sendfile('public/search.html')
 });
+
+app.get('/submit.html', (req, res) =>{
+	res.sendfile('public/submit.html')
+});
