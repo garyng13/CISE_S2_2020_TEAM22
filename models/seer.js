@@ -1,3 +1,5 @@
+//schema for database
+
 const mongoose = require('mongoose');
 
 const seerSchema = new mongoose.Schema({

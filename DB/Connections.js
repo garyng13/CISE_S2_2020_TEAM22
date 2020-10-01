@@ -1,10 +1,13 @@
-const config = require('../config.js');
+//const config = require('../config.js');
 
 const mongoose = require('mongoose');
 
-//second trial to connect to cloud based mongodb
-const url = 'mongodb+srv://dbUser:'+config.KEY+'@cluster0.npid8.mongodb.net/seer?retryWrites=true&w=majority';
+//url to connect mongodb Atlas
+//const url = process.env.MONGO_URL ||'mongodb+srv://dbUser:'+config.KEY+'@cluster0.npid8.mongodb.net/seer?retryWrites=true&w=majority';
+const url = process.env.MONGO_URL ||'mongodb+srv://dbUser:GaryAut2020@cluster0.npid8.mongodb.net/seer?retryWrites=true&w=majority';
 
+
+//const url = "mongodb://localhost:27017/seer";
 //const url = process.env.url;
 
 const connectDB = async () =>{
