@@ -5,12 +5,16 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <title>SEER - Software Engineering Evidence Repository</title>
 	</head>
 	<body>
 		<header class="home-header">
-			<div id="topHeader">
-				<div class="logo">
+			<div id="topHeader" style="width: 100%;">
+				<div class="logo" style="width: 50%; height: 100px; float: left;"> 
 					<a href="/"></a>
+				</div>
+				<div style="margin-left: 50%; height: 100px; padding-left: 41%;"> 
+					<img src="https://library.aut.ac.nz/__data/assets/image/0004/24781/logo.jpg">
 				</div>
 			</div>
 			<div id="mainHeader">
@@ -46,10 +50,9 @@
 						<td>
 							<select name="category[]" id="category">
 								<option value="" selected disabled>Name of Field</option>
-								<option value="Article">Author</option>
-								<option value="Journal">Journal</option>
-								<option value="Book">Book</option>
-								<option value="Reseach Paper">Reseach Paper</option>
+								<option value="title">Article Title</option>
+								<option value="source">Source</option>
+								<option value="author">Author</option>
 							</select>
 							<select name="operator[]" id="operator">
 								<option value="" selected disabled>Operator</option>
@@ -80,7 +83,7 @@ $(document).ready(function() {
 	var i = 1;
 	$('#add').click(function() {
 		i++;
-		$('#dynamic_field').append('<tr id="row'+i+'"><td> <select name="category[]" id="category"><option value="" disabled selected>Name of Field</option><option value="Article">Author</option><option value="Journal">Journal</option><option value="Book">Book</option><option value="Reseach Paper">Reseach Paper</option></select><select name="operator[]" id="oeprator"><option value="" disabled selected>Operator</option><option value="contains">Contains</option><option value="doesNotContain">Does Not Contain</option><option value="begin">Begins With</option><option value="endr">Ends With</option></select><select name="containValue[]" id="containValue"><option value="" disabled selected>Value</option><option value="Author1">John Smith</option><option value="Author2">Peter</option><option value="Author3">Peter Parker</option></select><button type="button" name="remove" id="'+i+'" class="btn btn-dark remove">Remove</button></td></tr>');
+		$('#dynamic_field').append('<tr id="row'+i+'"><td> <select name="category[]" id="category"><option value="" disabled selected>Name of Field</option><option value="title">Article Title</option><option value="source">Source</option><option value="author">Author</option></select><select name="operator[]" id="oeprator"><option value="" disabled selected>Operator</option><option value="contains">Contains</option><option value="doesNotContain">Does Not Contain</option><option value="begin">Begins With</option><option value="endr">Ends With</option></select><select name="containValue[]" id="containValue"><option value="" disabled selected>Value</option><option value="Author1">John Smith</option><option value="Author2">Peter</option><option value="Author3">Peter Parker</option></select><button type="button" name="remove" id="'+i+'" class="btn btn-dark remove">Remove</button></td></tr>');
 	});
 	$(document).on('click', '.remove', function(){
 		var button_id = $(this).attr("id"); 
@@ -125,7 +128,7 @@ p {
     letter-spacing: .05rem;
 }
 #topHeader {
-	height: 107px;
+	height: 115px;
 	background-color: #fff;
 }
 #mainHeader {
