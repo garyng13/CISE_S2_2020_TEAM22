@@ -2,6 +2,9 @@
 <html>
 	<head>
 	  <link rel="stylesheet" type="text/css" href="../public/mystyle.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<header class="home-header">
@@ -14,8 +17,11 @@
 				<div class="main container">
 					<ul class="nav-menu">
 						<nav id="mainNav">
-							<li><a href="#">Register</a></li>
-							<li><a href="#">Login</a></li>
+							<li><a href="">Register</a></li>
+							<li><a href="">Login</a></li>
+							<li><a href="">Submission Queue</a></li>
+							<li><a href="">Submit Article</a></li>
+							<li class="active"><a href="">Home</a></li>
 						</nav>
 					</ul>
 				</div>
@@ -24,46 +30,65 @@
 
 		<div class="search container">
 			<div id="edit-section">
-				<h1 style="font-size: 10rem;">SEER</h1>
-				<h1>Software Engineering Evidence Repository</h1>
-				<br><br>
-				<h2 class="section-title">Search</h2>
-				<h2>Description</h2>
+				<h1 style="font-size: 6rem;">SEER</h1>
+				<h4>Software Engineering Evidence Repository</h4>
+				<h2>Search</h2>
+				<h3>Description</h3>
 				<input type="text" placeholder="Enter search keywords">
-				<br>
-				<h2>Date Range From</h2>
-				<input type="date" id="date" name="date" value="2020-09-02">
-				<h2>To</h2>
-				<input type="date" id="date" name="date" value="2020-09-02">
-				<br>
-				<h2>Condition</h2>
-				<select name="Category" id="Category">
-					<option value="" disabled selected>Name of Field</option>
-					<option value="Article">Author</option>
-					<option value="Journal">Journal</option>
-					<option value="Book">Book</option>
-					<option value="Reseach Paper">Reseach Paper</option>
-				</select>
-				<select name="operator" id="oeprator">
-					<option value="" disabled selected>Operator</option>
-					<option value="contains">Contains</option>
-					<option value="doesNotContain">Does Not Contain</option>
-					<option value="begin">Begins With</option>
-					<option value="endr">Ends With</option>
-				</select>
-				<select name="containValue" id="containValue">
-					<option value="" disabled selected>Value</option>
-					<option value="contains">John Smith</option>
-					<option value="doesNotContain">Peter</option>
-					<option value="begin">Peter Parker</option>
-				</select>
-				<a type="button" class="constraint" href="#">Add</a>
-				<a type="button" class="constraint" href="#">Remove</a><br>
-				<a type="button" class="cta" href="#">Search</a>
+				<h3>Date Range From</h3>
+				<div class="input-prepend input-append">
+					<input type="date" id="date" name="date"><span class="add-on"> To </span><input type="date" id="date" name="date">
+				</div>
+				
+				<h3>Condition</h3>
+				<table class="table table-borderless" id="dynamic_field">
+					<tr>
+						<td>
+							<select name="category[]" id="category">
+								<option value="" selected disabled>Name of Field</option>
+								<option value="Article">Author</option>
+								<option value="Journal">Journal</option>
+								<option value="Book">Book</option>
+								<option value="Reseach Paper">Reseach Paper</option>
+							</select>
+							<select name="operator[]" id="operator">
+								<option value="" selected disabled>Operator</option>
+								<option value="contains">Contains</option>
+								<option value="doesNotContain">Does Not Contain</option>
+								<option value="begin">Begins With</option>
+								<option value="end">Ends With</option>
+							</select>
+							<select name="containValue[]" id="containValue">
+								<option value="" selected disabled>Value</option>
+								<option value="Author1">John Smith</option>
+								<option value="Author2">Peter</option>
+								<option value="Author3">Peter Parker</option>
+							</select>
+							<a name="add" id="add" class="btn btn-dark add">Add More</a>
+						</td>
+					</tr>
+				</table>
+				
+				<button type="button" class="btn btn-dark cta">Search</button>
 			</div>
 		</div>
 	</body>
 </html>
+
+<script>
+$(document).ready(function() {
+	var i = 1;
+	$('#add').click(function() {
+		i++;
+		$('#dynamic_field').append('<tr id="row'+i+'"><td> <select name="category[]" id="category"><option value="" disabled selected>Name of Field</option><option value="Article">Author</option><option value="Journal">Journal</option><option value="Book">Book</option><option value="Reseach Paper">Reseach Paper</option></select><select name="operator[]" id="oeprator"><option value="" disabled selected>Operator</option><option value="contains">Contains</option><option value="doesNotContain">Does Not Contain</option><option value="begin">Begins With</option><option value="endr">Ends With</option></select><select name="containValue[]" id="containValue"><option value="" disabled selected>Value</option><option value="Author1">John Smith</option><option value="Author2">Peter</option><option value="Author3">Peter Parker</option></select><button type="button" name="remove" id="'+i+'" class="btn btn-dark remove">Remove</button></td></tr>');
+	});
+	$(document).on('click', '.remove', function(){
+		var button_id = $(this).attr("id"); 
+		$('#row'+button_id+'').remove();
+	});
+});
+</script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 * {
@@ -143,9 +168,14 @@ float: right;
 	font-size: 18px;
 	color: white;
 	text-decoration: none;
-	}
+}
+.nav-menu li.active a {
+	color: black;
+}
 .nav-menu li a:hover {
-	color: #fff;
+	transition: .3s ease;
+	transition-property: background-color, color;
+	color: black;
 }
 .logo {
 	z-index: 99;
@@ -164,7 +194,7 @@ float: right;
     font-weight: 300;
     color: black;
 	margin-bottom: 10px;
-	margin-top: 10px;
+	margin-top: 15px;
     text-transform: uppercase;
     letter-spacing: .2rem;
 }
@@ -186,7 +216,7 @@ float: right;
     color: white;
     background-color: black;
 }
-.constraint {
+.add, .remove {
 	font-weight: bold;
     display: inline-block;
     padding: 5px 10px;
@@ -201,7 +231,11 @@ float: right;
     transition: .6s ease;
 	transition-property: background-color, color;
 }
-.constraint:hover {
+.add:hover {
+	color: white;
+	background-color: black;
+}
+.remove:hover {
 	color: white;
 	background-color: black;
 }
@@ -246,7 +280,7 @@ float: right;
 }
 #edit-section input, select {
     width: 20%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 5px;
     margin: 6px 0;
     outline: none;
