@@ -35,7 +35,48 @@ router.post('/search', async(req, res)=>{
 	console.log(rating);
 	try{
 		const seer = await Seer.find({author : author, url:url, rating:rating});
-		res.json(seer);
+		console.log(seer);
+		//console.log(seer[0].author);
+
+		//need to loop through the json object and get author, url and rating
+		const authors = [];
+		const urls =[];
+		const ratings = [];
+
+		//loop through the json object returned from mongoDB and push it into the arrays
+		for (var i = 0; i <seer.length ; i++){
+			authors.push(seer[i].author);
+			urls.push(seer[i].url);
+			ratings.push(seer[i].rating);
+		}
+
+		/*
+		const authorReturn = seer[0].author;
+		const urlReturn = seer[0].url;
+		const ratingReturn = seer[0].rating;
+		*/
+
+		//render html with the search results. FAILED to loop through the results, only one resutlt is displayed 
+		//right now
+		res.set('Content-Type', 'text/html')
+		if(authors != null){
+				res.send(Buffer.from('<p>' + authors[0] + '</p>'
+		+ '<p>' + urls[0] + '</p>'
+		+ '<p>' + ratings[0] + '</p>'
+		))
+		}else{
+		res.send(Buffer.from('<p>There is no results</p>'
+		))
+		}
+
+		/*
+		//res.json(seer);
+		res.set('Content-Type', 'text/html')
+		res.send(Buffer.from('<p>' + authorReturn + '</p>'
+		+ '<p>' + urlReturn + '</p>'
+		+ '<p>' + ratingReturn + '</p>'
+		)) //
+		*/
 	}catch(err){
 		res.send('Error' + err);
 	}
