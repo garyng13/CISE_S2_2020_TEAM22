@@ -24,6 +24,9 @@ app.use('/seer', seerRouter);
 
 app.use('/coffee', seerRouter);
 
+app.use(express.static(__dirname + '/public'));
+
+/* use app.use(express.static(__dirname + '/public')) to replace below, leave it as backup right now
 app.get('/', (req, res) =>{
 	res.sendfile('public/index.html')
 });
@@ -34,4 +37,4 @@ app.get('/search.html', (req, res) =>{
 
 app.get('/submit.html', (req, res) =>{
 	res.sendfile('public/submit.html')
-});
+});*/
