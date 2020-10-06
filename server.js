@@ -22,8 +22,6 @@ const seerRouter = require('./routes/seer');
 
 app.use('/seer', seerRouter);
 
-app.use('/coffee', seerRouter);
-
 app.use(express.static(__dirname + '/public'));
 /*
 app.get('/', (req, res) =>{

@@ -13,10 +13,28 @@ router.get('/', async(req, res)=>{
 
 });
 
-// route for getting particular id from database
+/*// route for getting particular id from database
 router.get('/:id', async(req, res)=>{
 	try{
 		const seer = await Seer.findById(req.params.id);
+		res.json(seer);
+	}catch(err){
+		res.send('Error' + err);
+	}
+
+});
+*/
+
+// route for getting particular id from database
+router.post('/search', async(req, res)=>{
+	let author = req.body.author;
+    let url = req.body.url;
+	let rating = req.body.rating;
+	console.log(author);
+	console.log(url);
+	console.log(rating);
+	try{
+		const seer = await Seer.find({author : author, url:url, rating:rating});
 		res.json(seer);
 	}catch(err){
 		res.send('Error' + err);
