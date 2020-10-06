@@ -28,5 +28,17 @@
       <option value="Reseach Paper">Reseach Paper</option>
     </select>
     <br>
+
+          <!-- form to test posting data to mongoDB -->
+      <form method="POST" action="/seer/">
+        <h4>Author</h4>
+        <input type="text" id="author" name="author" value="" placeholder="Author Name.."/>
+        <h4>Article URL</h4>
+        <input type="text" id="url" name="url" value="" placeholder="Article URL..."/>
+        <h4>Article Rating</h4>
+        <input type="text" id="rating" name="rating" value="" min="1" max="5" placeholder="Rating 1-5"/>
+        <br>
+        <button type="submit" class="btn btn-dark cta">Send</button>
+      </form>
 </body>
 </html>
