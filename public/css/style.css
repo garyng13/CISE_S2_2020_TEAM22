@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+	background-color: white;
+}
+html {
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+	background-color: white;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    align-content: center;
+}
+.container {
+    min-height: 60vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+}
+p {
+    color: black;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    letter-spacing: .05rem;
+}
+#topHeader {
+	height: 115px;
+	background-color: #fff;
+}
+#mainHeader {
+	background-color: #5a5a5a;
+	height: 70px;
+	overflow: hidden;
+}
+#mainHeader #mainNav {
+	display: block !important;
+	width: 100%;
+	border: 0px;
+	padding-left: 20px;
+}
+nav {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 2vw;
+	height: 80px;
+	z-index: 1;
+}
+.nav-menu {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+}
+.nav-menu li {
+float: right;
+}
+.nav-menu li a {
+	display: block;
+	height: 42px;
+	padding: 0 10px;
+	line-height: 68px;
+	font-size: 18px;
+	color: white;
+	text-decoration: none;
+}
+.nav-menu li.active a {
+	color: black;
+}
+.nav-menu li a:hover {
+	transition: .3s ease;
+	transition-property: background-color, color;
+	color: black;
+}
+.logo {
+	z-index: 99;
+	max-width: 100%;
+}
+.logo a {
+	background-repeat: no-repeat;
+	width: 500px;
+	max-width: 95%;
+	height: 100px;
+	display: block;
+	background-image: url(https://serl.aut.ac.nz/__data/assets/file/0009/260658/SERL_banner.svg);
+}
+.section-title {
+  font-size: 4rem;
+  font-weight: 300;
+  color: black;
+	margin-bottom: 10px;
+	margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+.cta {
+  font-weight: bold;
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  transition: .5s ease;
+  transition-property: background-color, color;
+}
+.cta:hover {
+  color: white;
+  background-color: black;
+}
+.submit {
+  margin-top: 15px;
+}
+.add, .remove {
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  color: black;
+  background-color: transparent;
+  border: 2px solid black;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 1px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  transition: .6s ease;
+  transition-property: background-color, color;
+}
+.add:hover {
+	color: white;
+	background-color: black;
+}
+.remove:hover {
+	color: white;
+	background-color: black;
+}
+#search .search {
+  flex-direction: column-reverse;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  padding-bottom: 0%;
+}
+#search .col-left {
+  width: 250px;
+  height: 360px;
+}
+#search .col-right {
+  width: 100%;
+}
+#search .col-right h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  margin-bottom: 10px;
+}
+#search .col-right p {
+  margin-bottom: 20px;
+}
+#search .col-right .cta {
+  margin-bottom: 20px;
+}
+/* End About Section */
+
+#edit-section {
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 10px;
+  flex-direction: column-reverse;
+  text-align: center;
+  max-width: 1200px;
+  padding: 50px 20px;
+  padding-bottom: 0%;
+}
+#edit-section input, select {
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 6px 0;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: .3s;
+}
+#edit-section select {
+	margin: 5px;
+}
+#edit-section input[type = number] {
+    width: 5%;
+}
