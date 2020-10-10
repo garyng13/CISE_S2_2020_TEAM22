@@ -34,6 +34,9 @@ router.post('/search', async(req, res)=>{
 	console.log(url);
 	console.log(rating);
 	try{
+		// If (url or rating is empty)
+		// const seer = await Seer.find({author : author});
+		
 		const seer = await Seer.find({author : author, url:url, rating:rating});
 		console.log(seer);
 		//console.log(seer[0].author);
@@ -60,10 +63,10 @@ router.post('/search', async(req, res)=>{
 		//right now
 		res.set('Content-Type', 'text/html')
 		if(authors != null){
-				res.send(Buffer.from('<p>' + authors[0] + '</p>'
-		+ '<p>' + urls[0] + '</p>'
-		+ '<p>' + ratings[0] + '</p>'
-		))
+			for(var i = 0; i < authors.length; i++) {
+				console.log(authors.length)
+				res.send(Buffer.from('<p>' + authors[i] + '</p>' + '<p>' + urls[i] + '</p>' + '<p>' + ratings[i] + '</p>'))
+			}
 		}else{
 		res.send(Buffer.from('<p>There is no results</p>'
 		))
