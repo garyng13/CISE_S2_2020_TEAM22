@@ -34,6 +34,9 @@ router.post('/search', async(req, res)=>{
 	console.log(url);
 	console.log(rating);
 	try{
+		//print the time before searching
+		timeStart = Date.now();
+		console.log(timeStart);
 		const seer = await Seer.find({author : author, url:url, rating:rating});
 		console.log(seer);
 		//console.log(seer[0].author);
@@ -68,6 +71,12 @@ router.post('/search', async(req, res)=>{
 		res.send(Buffer.from('<p>There is no results</p>'
 		))
 		}
+		//print the time after searching 
+		timeEnd = Date.now();
+		console.log(timeEnd);
+
+		//print the time taken for the search
+		console.log(timeEnd-timeStart);
 
 		/*
 		//res.json(seer);

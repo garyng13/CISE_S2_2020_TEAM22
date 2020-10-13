@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "client-install": "npm install --prefix client",
-    "start": "node server.js",
+    "client-install": "npm install --prefix client",
+    "start": "nodemon server.js",
     "test": "mocha"
   },
   "author": "",
@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.1.1"
+    "mocha": "^8.1.1",
+    "nodemon": "^2.0.4",
+    "supertest": "^5.0.0"
   }
 }
