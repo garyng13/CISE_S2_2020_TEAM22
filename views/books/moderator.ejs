@@ -1,0 +1,44 @@
+<h1>Submitted Article Queue</h1>
+<br>
+<!-- <div>
+    <% books.forEach(book => { %>
+        <div>Article Title: <%= book.title %></div>
+        <div>Publish Date: <%= book.publishDate.toISOString().split('T')[0] %> </div><br>
+    <% }) %> 
+</div> -->
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;    
+    }
+</style>
+<div>
+    <table style="width: 100%;">
+        <tr>
+            <th>Publication Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>DOI</th>
+            <th>Publication Date</th>
+            <th>Approve/Reject</th>
+        </tr>
+        <% books.forEach(book => { %>
+        <tr>
+            <td><%= book.title %></td>
+            <td><i>Author..</i></td>
+            <td><%= book.description %></td>
+            <td><%= book.publishDate.toISOString().split('T')[0] %></td>
+            <td><%= book.createdAt.toISOString().split('T')[0] %> </td>   
+            <td>
+                <button class="">Approve</button>
+                <button class="">Reject</button>
+            </td>
+        </tr>
+        <% }) %> 
+    </table> 
+</div>
