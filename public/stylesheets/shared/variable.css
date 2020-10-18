@@ -1,0 +1,4 @@
+:root {
+    --color-base-hue: 0;
+    --color-text-light: hsl(var(--color-base-hue), 0%, 0%);
+}

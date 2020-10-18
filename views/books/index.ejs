@@ -1,0 +1,48 @@
+<h1>Search Article</h1><br>
+<form action="/books" method="GET">
+    <div>
+        <label for="">Article Title</label>
+        <input type="text" name="title" value="<%= searchOptions.title %>">
+    </div>  
+    <div>
+        <label for="">Published After</label>
+        <input type="date" name="PublishedAfter" value="<%= searchOptions.PublishedAfter %>">
+    </div>
+    <div>
+        <label for="">Published Before</label>
+        <input type="date" name="PublishedBefore" value="<%= searchOptions.PublishedBefore %>">
+    </div>
+    <button type="submit" class="cta">Search</button>
+</form>
+<br>
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;    
+    }
+</style>
+<div>
+    <table>
+        <tr>
+            <th>Publication Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>DOI</th>
+            <th>Publication Date</th>
+        </tr>
+        <% books.forEach(book => { %>
+        <tr>
+            <td><%= book.title %></td>
+            <td><i>Author..</i></td>
+            <td><%= book.description %></td>
+            <td><%= book.publishDate.toISOString().split('T')[0] %> </td>
+            <td><%= book.createdAt.toISOString().split('T')[0] %> </td>
+        </tr>
+        <% }) %> 
+    </table>
+</div>

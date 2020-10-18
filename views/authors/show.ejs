@@ -1,0 +1,33 @@
+<h2><%= author.name %> </h2>
+<a href="/authors/<%= author.id %>/edit" class="cta">Edit</a>
+<%- include('../partials/deleteForm', 
+            { url: `/authors/${author.id}` }) %> 
+<% if (booksByAuthor.length > 0) { %>
+    <h2>Articles By Author</h2>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 5px;
+          text-align: left;    
+        }
+    </style>
+    <div>
+        <table style="width: 100%;">
+            <tr>
+                <th>Article Title</th>
+                <th>Description</th>
+                <th>Publish Date</th>
+            </tr>
+            <% booksByAuthor.forEach(book => { %>
+            <tr>
+                <td><%= book.title %></td>
+                <td><%= book.description %></td>
+                <td><%= book.publishDate.toISOString().split('T')[0] %> </td>
+            </tr>
+            <% }) %> 
+        </table> 
+    </div>
+<% } %> 

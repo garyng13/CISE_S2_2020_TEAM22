@@ -1,40 +1,33 @@
-const express = require('express');
-const app = express();
-const connectDB = require('./DB/Connections');
-const PORT = process.env.PORT || 5000;
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+} 
+
+const express = require('express')
+const app = express()
+const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
-//connect to mongoDB Atlas 
-connectDB();
+const indexRouter = require('./routes/index')
+const authorRouter = require('./routes/authors')
+const bookRouter = require('./routes/books')
 
-//use Json parser
-app.use(express.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views')
+app.set('layout', 'layouts/layout')
+app.use(expressLayouts)
+app.use(methodOverride('_method'))
+app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 
-//listen to port localhost 5000
-app.listen(PORT, ()=>{
-	console.log("listening on " + PORT);
-});
+const mongoose = require('mongoose')
+mongoose.connect(process.env.DATABASE_URL, { useUnifiedTopology: true, useNewUrlParser: true })
+const db = mongoose.connection
+db.on('error', error => console.error(error))
+db.once('open', () => console.log('Connected to Mongoose'))
 
-const seerRouter = require('./routes/seer');
+app.use('/', indexRouter)
+app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
-app.use('/seer', seerRouter);
-
-app.use('/coffee', seerRouter);
-
-app.use(express.static(__dirname + '/public'));
-
-/* use app.use(express.static(__dirname + '/public')) to replace below, leave it as backup right now
-app.get('/', (req, res) =>{
-	res.sendfile('public/index.html')
-});
-
-app.get('/search.html', (req, res) =>{
-	res.sendfile('public/search.html')
-});
-
-app.get('/submit.html', (req, res) =>{
-	res.sendfile('public/submit.html')
-});*/
+app.listen(process.env.PORT || 3000)
