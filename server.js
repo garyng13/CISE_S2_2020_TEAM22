@@ -20,13 +20,16 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 
-const url = process.env.DATABASE_URL ||'mongodb+srv://dbUser:GaryAut2020@cluster0.npid8.mongodb.net/seer?retryWrites=true&w=majority';
+// const url = process.env.DATABASE_URL ||'mongodb+srv://dbUser:GaryAut2020@cluster0.npid8.mongodb.net/seer?retryWrites=true&w=majority';
 
-const mongoose = require('mongoose')
-mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true })
-const db = mongoose.connection
-db.on('error', error => console.error(error))
-db.once('open', () => console.log('Connected to Mongoose'))
+// const mongoose = require('mongoose')
+// mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true })
+// const db = mongoose.connection
+// db.on('error', error => console.error(error))
+// db.once('open', () => console.log('Connected to Mongoose'))
+const connectDB = require('./DB/Connections');
+
+connectDB();
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
