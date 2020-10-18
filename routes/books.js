@@ -17,6 +17,9 @@ const upload = multer({
 
 // All Books Route
 router.get('/', async (req, res) => {
+    //print the time before searching
+    timeStart = Date.now();
+    console.log(timeStart);
     let query = Book.find()
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'))
@@ -33,6 +36,12 @@ router.get('/', async (req, res) => {
                 books: books,
                 searchOptions: req.query
             })
+        //print the time after searching 
+		timeEnd = Date.now();
+		console.log(timeEnd);
+
+		//print the time taken for the search
+		console.log(timeEnd-timeStart);
     } catch {
         res.redirect('/')
     }  
