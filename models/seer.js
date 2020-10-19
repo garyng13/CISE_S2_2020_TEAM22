@@ -1,4 +1,4 @@
-//schema for database
+//INITIAL TEST schema for database
 
 const mongoose = require('mongoose');
 
